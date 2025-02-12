@@ -52,8 +52,8 @@ export default function Navbar() {
 
   return (
     <nav className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="shrink-0">
               <Image
@@ -64,15 +64,15 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+              <div className="flex items-baseline ml-10 space-x-4">
                 <MenuList />
               </div>
             </div>
           </div>
-          <div className="-mr-2 flex md:hidden">
+          <div className="flex -mr-2 md:hidden">
             <button
               type="button"
-              className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+              className="relative inline-flex items-center justify-center p-2 text-gray-400 bg-gray-800 rounded-md hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
               aria-controls="mobile-menu"
               aria-expanded={isMenuOpen}
               onClick={toggleMenu}
@@ -118,7 +118,7 @@ export default function Navbar() {
         className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}
         id="mobile-menu"
       >
-        <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3 flex-col flex">
+        <div className="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <MenuList />
         </div>
       </div>
