@@ -27,7 +27,9 @@ export default function Navbar() {
       <Link
         href="/"
         className={`rounded-md px-3 py-2 text-sm font-medium ${
-          pathname === "/" ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
+          pathname === "/"
+            ? "bg-gray-900 text-white"
+            : "text-gray-300 hover:bg-gray-700 hover:text-white"
         }`}
       >
         World
@@ -37,7 +39,9 @@ export default function Navbar() {
           key={continent}
           href={`/continente/${continent.toLowerCase()}`}
           className={`rounded-md px-3 py-2 text-sm font-medium ${
-            pathname === `/continente/${continent.toLowerCase()}` ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white"
+            pathname === `/continente/${continent.toLowerCase()}`
+              ? "bg-gray-900 text-white"
+              : "text-gray-300 hover:bg-gray-700 hover:text-white"
           }`}
         >
           {continent}
