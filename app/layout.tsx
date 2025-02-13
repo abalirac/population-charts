@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import QueryClientProvider from "./api/QueryClientProvider";
 
 /**
  * Create a new instance of Geist font
@@ -20,11 +19,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-/**
- * Create a new instance of Tanstack QueryClient
- */
-const queryClient = new QueryClient();
 
 /**
  * Metadata for the app
@@ -44,10 +38,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryClientProvider client={queryClient}>
+        <QueryClientProvider>
           <Navbar />
           {children}
-          <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </body>
     </html>
