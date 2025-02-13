@@ -4,16 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { useCountries } from "@/app/api/hooks/useCountries";
+import { useContinents } from "../api/hooks/useContinents";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const { data: countries } = useCountries();
-
-  // Map the countries to get the continents
-  const continents = [...new Set(countries?.map((country) => country.region))];
+  const { continents } = useContinents();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
