@@ -1,13 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import MobileMenu from "./MobileMenu";
-import PopulationFilter from "./PopulationFilter";
+import { MobileMenu } from "./MobileMenu";
 import { useContinents } from "@/lib/queries/useContinents";
-import MenuList from "./MenuList";
+import { useState } from "react";
+import { MobileMenuButton } from "./MobileMenuButton";
+import { DesktopMenu } from "./DesktopMenu";
 
 export default function Navbar() {
   const { data: continents = [] } = useContinents();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <nav className="bg-gray-800">
@@ -22,17 +28,13 @@ export default function Navbar() {
                 height={50}
               />
             </div>
-            <div className="hidden md:block">
-              <div className="flex items-baseline ml-10 space-x-4">
-                <MenuList continents={continents} />
-                <PopulationFilter />
-              </div>
-            </div>
+            <DesktopMenu continents={continents} />
           </div>
           <div className="flex -mr-2 md:hidden">
-            <MobileMenu continents={continents} />
+            <MobileMenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           </div>
         </div>
+        <MobileMenu continents={continents} isMenuOpen={isMenuOpen} />
       </div>
     </nav>
   );
