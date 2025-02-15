@@ -25,9 +25,9 @@ const MenuList: React.FC<MenuListProps> = ({ continents }) => {
       {continents.map((continent) => (
         <Link
           key={continent}
-          href={`/continente/${continent.toLowerCase()}`}
+          href={`/continent/${continent.toLowerCase()}`}
           className={`rounded-md px-3 py-2 text-sm font-medium ${currentPathStyle(
-            `/continente/${continent.toLowerCase()}`
+            `/continent/${continent.toLowerCase()}`
           )}`}
         >
           {continent}
