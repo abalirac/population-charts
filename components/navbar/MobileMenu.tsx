@@ -1,5 +1,5 @@
 import { useContinents } from "@/lib/queries/useContinents";
-import MenuList from "./MenuList";
+import { MenuList } from "./MenuList";
 import PopulationFilter from "./PopulationFilter";
 
 interface MobileMenuProps {

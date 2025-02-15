@@ -5,7 +5,7 @@ interface MenuListProps {
   continents: string[];
 }
 
-const MenuList: React.FC<MenuListProps> = ({ continents }) => {
+export const MenuList = ({ continents }: MenuListProps) => {
   const pathname = usePathname();
 
   const currentPathStyle = (pathName: string) => {
@@ -36,5 +36,3 @@ const MenuList: React.FC<MenuListProps> = ({ continents }) => {
     </>
   );
 };
-
-export default MenuList;
