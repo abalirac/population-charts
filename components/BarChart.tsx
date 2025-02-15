@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import { Bar, BarChart as BChart, CartesianGrid, XAxis } from "recharts";
 
 import {
   Card,
@@ -124,7 +124,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function Component() {
+export function BarChart() {
   const [activeChart, setActiveChart] =
     React.useState<keyof typeof chartConfig>("desktop");
 
@@ -171,7 +171,7 @@ export function Component() {
           config={chartConfig}
           className="aspect-auto h-[250px] w-full"
         >
-          <BarChart
+          <BChart
             accessibilityLayer
             data={chartData}
             margin={{
@@ -210,7 +210,7 @@ export function Component() {
               }
             />
             <Bar dataKey={activeChart} fill={`var(--color-${activeChart})`} />
-          </BarChart>
+          </BChart>
         </ChartContainer>
       </CardContent>
     </Card>

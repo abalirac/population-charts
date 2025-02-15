@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import { MobileMenu } from "./MobileMenu";
-import { useContinents } from "@/lib/queries/useContinents";
 import { useState } from "react";
 import { MobileMenuButton } from "./MobileMenuButton";
 import { DesktopMenu } from "./DesktopMenu";
 
 export default function Navbar() {
-  const { data: continents = [] } = useContinents();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -28,13 +26,13 @@ export default function Navbar() {
                 height={50}
               />
             </div>
-            <DesktopMenu continents={continents} />
+            <DesktopMenu />
           </div>
           <div className="flex -mr-2 md:hidden">
             <MobileMenuButton isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           </div>
         </div>
-        <MobileMenu continents={continents} isMenuOpen={isMenuOpen} />
+        <MobileMenu isMenuOpen={isMenuOpen} />
       </div>
     </nav>
   );

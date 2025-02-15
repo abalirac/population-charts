@@ -1,12 +1,14 @@
+import { useContinents } from "@/lib/queries/useContinents";
 import MenuList from "./MenuList";
 import PopulationFilter from "./PopulationFilter";
 
 interface MobileMenuProps {
-  continents: string[];
   isMenuOpen: boolean;
 }
 
-export const MobileMenu = ({ continents, isMenuOpen }: MobileMenuProps) => {
+export const MobileMenu = ({ isMenuOpen }: MobileMenuProps) => {
+  const { data: continents = [] } = useContinents();
+
   return (
     <>
       <div

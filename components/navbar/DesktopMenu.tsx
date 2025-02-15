@@ -1,11 +1,10 @@
+import { useContinents } from "@/lib/queries/useContinents";
 import MenuList from "./MenuList";
 import PopulationFilter from "./PopulationFilter";
 
-interface DesktopMenuProps {
-  continents: string[];
-}
+export const DesktopMenu = () => {
+  const { data: continents = [] } = useContinents();
 
-export const DesktopMenu = ({ continents }: DesktopMenuProps) => {
   return (
     <div className="hidden md:block">
       <div className="flex items-baseline ml-10 space-x-4">

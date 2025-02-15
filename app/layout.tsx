@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 
-import Navbar from "../components/navbar/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 import QueryClientProvider from "@/lib/config/QueryClientProvider";
 
 /**
