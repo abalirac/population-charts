@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import MenuList from "./MenuList";
-import MobileMenu from "./navbar/MobileMenu";
-import PopulationFilter from "./navbar/PopulationFilter";
+import MobileMenu from "./MobileMenu";
+import PopulationFilter from "./PopulationFilter";
 import { useContinents } from "@/lib/queries/useContinents";
+import MenuList from "./MenuList";
 
 export default function Navbar() {
   const { data: continents = [] } = useContinents();

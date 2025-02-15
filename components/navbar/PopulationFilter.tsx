@@ -1,6 +1,5 @@
-// components/PopulationFilter.tsx
 "use client";
-import { usePopulationFilter } from "../lib/store/usePopulationFilter";
+import { usePopulationFilter } from "../../lib/store/usePopulationFilter";
 
 const PopulationFilter = () => {
   const { minPopulation, setMinPopulation } = usePopulationFilter();
