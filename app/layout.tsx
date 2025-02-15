@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/Navbar";
-import QueryClientProvider from "./api/QueryClientProvider";
+import "@/styles/globals.css";
+
+import Navbar from "../components/Navbar";
+import QueryClientProvider from "@/lib/config/QueryClientProvider";
 
 /**
  * Create a new instance of Geist font

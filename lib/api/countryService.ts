@@ -1,5 +1,5 @@
-import { Country } from "@/app/types/types";
-import axiosInstance from "../axiosInstance";
+import { Country } from "@/types/types";
+import axiosInstance from "../config/axiosInstance";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
