@@ -4,13 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { useContinents } from "../api/hooks/useContinents";
+
+import PopulationFilter from "./PopulationFilter";
+import { useContinents } from "@/lib/queries/useContinents";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const { continents } = useContinents();
+  const { data: continents } = useContinents();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -60,6 +62,7 @@ export default function Navbar() {
             <div className="hidden md:block">
               <div className="flex items-baseline ml-10 space-x-4">
                 <MenuList />
+                <PopulationFilter />
               </div>
             </div>
           </div>
@@ -114,6 +117,7 @@ export default function Navbar() {
       >
         <div className="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <MenuList />
+          <PopulationFilter />
         </div>
       </div>
     </nav>

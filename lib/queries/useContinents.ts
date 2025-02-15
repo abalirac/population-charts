@@ -11,5 +11,5 @@ export function useContinents() {
     return [...new Set(countries.map((country) => country.region))];
   }, [countries]);
 
-  return { continents, isLoading, error };
+  return { data: continents, isLoading, error };
 }
