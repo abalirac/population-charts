@@ -7,7 +7,7 @@ export const useCountries = (continent?: string) => {
   console.log(minPopulation);
 
   return useQuery({
-    queryKey: ["countries", continent],
+    queryKey: ["countries", continent, minPopulation],
     queryFn: async () => {
       const countries = await CountryService.getCountries();
 

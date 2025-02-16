@@ -1,12 +1,19 @@
+import { useEffect, useState } from "react";
 import { useContinents } from "@/lib/queries/useContinents";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const MenuList = () => {
   const pathname = usePathname();
-  const { data: continents = [] } = useContinents();
+  const { data: fetchedContinents = [] } = useContinents();
+  const [continents, setContinents] = useState(fetchedContinents);
 
-  console.log(continents);
+  useEffect(() => {
+    // Solo actualizar el estado de continents si está vacío y fetchedContinents no lo está
+    if (continents.length === 0 && fetchedContinents.length > 0) {
+      setContinents(fetchedContinents);
+    }
+  }, [fetchedContinents, continents]);
 
   const currentPathStyle = (pathName: string) => {
     return pathname === pathName
