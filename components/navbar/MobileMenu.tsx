@@ -1,4 +1,3 @@
-import { useContinents } from "@/lib/queries/useContinents";
 import { MenuList } from "./MenuList";
 import PopulationFilter from "./PopulationFilter";
 
@@ -7,8 +6,6 @@ interface MobileMenuProps {
 }
 
 export const MobileMenu = ({ isMenuOpen }: MobileMenuProps) => {
-  const { data: continents = [] } = useContinents();
-
   return (
     <>
       <div
@@ -16,7 +13,7 @@ export const MobileMenu = ({ isMenuOpen }: MobileMenuProps) => {
         id="mobile-menu"
       >
         <div className="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <MenuList continents={continents} />
+          <MenuList />
           <PopulationFilter />
         </div>
       </div>

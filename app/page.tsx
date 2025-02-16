@@ -1,14 +1,14 @@
-import { BarChart } from "@/components/BarChart";
+"use client";
+
+import { PopulationBarChart } from "@/components/PopulationBarChart";
+import { useContinents } from "@/lib/queries/useContinents";
 
 export default function Home() {
+  const { data: continents = [] } = useContinents();
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <BarChart />
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        Created by Álvaro Balirac Seijas
-      </footer>
-    </div>
+    <main className="flex items-center sm:items-start w-full p-8">
+      <PopulationBarChart data={continents} />
+    </main>
   );
 }

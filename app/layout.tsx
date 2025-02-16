@@ -41,8 +41,13 @@ export default function RootLayout({
       >
         <QueryClientProvider>
           <Navbar />
-          {children}
+          <div className="container items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)] w-full max-w-screen-xl mx-auto">
+            {children}
+          </div>
         </QueryClientProvider>
+        <footer className="flex flex-wrap items-center justify-center w-full">
+          Created by Álvaro Balirac Seijas
+        </footer>
       </body>
     </html>
   );

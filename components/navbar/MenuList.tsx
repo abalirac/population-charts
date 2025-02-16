@@ -1,12 +1,10 @@
+import { useContinents } from "@/lib/queries/useContinents";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-interface MenuListProps {
-  continents: string[];
-}
-
-export const MenuList = ({ continents }: MenuListProps) => {
+export const MenuList = () => {
   const pathname = usePathname();
+  const { data: continents = [] } = useContinents();
 
   const currentPathStyle = (pathName: string) => {
     return pathname === pathName
@@ -24,13 +22,13 @@ export const MenuList = ({ continents }: MenuListProps) => {
       </Link>
       {continents.map((continent) => (
         <Link
-          key={continent}
-          href={`/continent/${continent.toLowerCase()}`}
+          key={continent.name}
+          href={`/continent/${continent.name.toLowerCase()}`}
           className={`rounded-md px-3 py-2 text-sm font-medium ${currentPathStyle(
-            `/continent/${continent.toLowerCase()}`
+            `/continent/${continent.name.toLowerCase()}`
           )}`}
         >
-          {continent}
+          {continent.name}
         </Link>
       ))}
     </>
