@@ -16,6 +16,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { RegionName } from "@/types/types";
 
 const chartConfig = {
   views: {
@@ -24,7 +25,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 interface PopulationBarChartProps {
-  data: { name: string; population: number }[];
+  data: { name: RegionName; population: number }[];
 }
 
 export function PopulationBarChart({ data }: PopulationBarChartProps) {
@@ -32,8 +33,6 @@ export function PopulationBarChart({ data }: PopulationBarChartProps) {
     () => data.reduce((acc, curr) => acc + Number(curr.population), 0),
     [data]
   );
-
-  console.log(data);
 
   return (
     <Card className="w-full">
@@ -68,7 +67,7 @@ export function PopulationBarChart({ data }: PopulationBarChartProps) {
           >
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="name"
+              dataKey="name.common"
               tickLine={false}
               axisLine={false}
               tickMargin={8}

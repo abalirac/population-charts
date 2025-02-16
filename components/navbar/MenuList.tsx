@@ -6,6 +6,8 @@ export const MenuList = () => {
   const pathname = usePathname();
   const { data: continents = [] } = useContinents();
 
+  console.log(continents);
+
   const currentPathStyle = (pathName: string) => {
     return pathname === pathName
       ? "bg-gray-900 text-white"
@@ -22,13 +24,13 @@ export const MenuList = () => {
       </Link>
       {continents.map((continent) => (
         <Link
-          key={continent.name}
-          href={`/continent/${continent.name.toLowerCase()}`}
+          key={continent.name.common}
+          href={`/continent/${continent.name.common.toLowerCase()}`}
           className={`rounded-md px-3 py-2 text-sm font-medium ${currentPathStyle(
-            `/continent/${continent.name.toLowerCase()}`
+            `/continent/${continent.name.common.toLowerCase()}`
           )}`}
         >
-          {continent.name}
+          {continent.name.common}
         </Link>
       ))}
     </>

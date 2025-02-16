@@ -13,7 +13,10 @@ export function useContinents() {
       (acc, country) => {
         const continent = country.region;
         if (!acc[continent]) {
-          acc[continent] = { name: continent, population: 0 };
+          acc[continent] = {
+            name: { official: continent, common: continent },
+            population: 0,
+          };
         }
         acc[continent].population += country.population;
         return acc;

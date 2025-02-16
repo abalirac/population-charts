@@ -1,10 +1,15 @@
 export interface Country {
-  name: string;
+  name: RegionName;
   population: number;
   region: string;
 }
 
 export interface Continent {
-  name: string;
+  name: RegionName;
   population: number;
+}
+
+export interface RegionName {
+  common: string;
+  official: string;
 }
