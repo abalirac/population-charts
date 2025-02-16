@@ -4,7 +4,6 @@ import CountryService from "@/lib/api/countryService";
 
 export const useCountries = (continent?: string) => {
   const minPopulation = usePopulationFilter((state) => state.minPopulation);
-  console.log(minPopulation);
 
   return useQuery({
     queryKey: ["countries", continent, minPopulation],
