@@ -26,6 +26,8 @@ export default function Navbar() {
                   alt="SDG Group Logo"
                   width={120}
                   height={50}
+                  priority
+                  className="w-auto"
                 />
               </Link>
             </div>
