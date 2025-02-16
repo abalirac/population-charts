@@ -5,6 +5,7 @@ import { MobileMenu } from "./MobileMenu";
 import { useState } from "react";
 import { MobileMenuButton } from "./MobileMenuButton";
 import { DesktopMenu } from "./DesktopMenu";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,12 +20,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="shrink-0">
-              <Image
-                src="/images/SDG-logo-white.png"
-                alt="SDG Group Logo"
-                width={120}
-                height={50}
-              />
+              <Link href="/">
+                <Image
+                  src="/images/SDG-logo-white.png"
+                  alt="SDG Group Logo"
+                  width={120}
+                  height={50}
+                />
+              </Link>
             </div>
             <DesktopMenu />
           </div>
