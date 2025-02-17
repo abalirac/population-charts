@@ -1,8 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📌 Population Charts APP
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) project, bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-First, run the development server:
+## 🚀 Prerequisites
+
+Before starting, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (recommended version 18 or later)
+- [Yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/) (optional, if you prefer an alternative package manager to npm)
+
+## 📥 Installation
+
+Clone the repository and navigate to the project folder:
+
+```bash
+git clone https://github.com/user/project.git
+cd project
+```
+
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+## 🛠️ Development
+
+To start the development server:
 
 ```bash
 npm run dev
@@ -10,27 +38,47 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, open [http://localhost:3000](http://localhost:3000) in your browser to view the running application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+📦 project
+ ┣ 📂 app/                # Pages and routes
+ ┣ 📂 components/         # Reusable components
+ ┣ 📂 api/                # React Query hooks and API services
+ ┣ 📂 store/              # Global state with Zustand
+ ┣ 📂 types/              # TypeScript type definitions
+ ┣ 📂 public/             # Static assets (images, icons, etc.)
+ ┣ 📜 next.config.js      # Next.js configuration
+ ┣ 📜 tsconfig.json       # TypeScript configuration
+ ┣ 📜 jest.config.ts      # Jest testing configuration
+ ┣ 📜 package.json        # Dependencies and scripts
+ ┗ 📜 README.md           # Project documentation
+```
 
-## Learn More
+## 🧪 Testing
 
-To learn more about Next.js, take a look at the following resources:
+This project uses **Jest** and **React Testing Library** for testing. Run tests with:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run test
+# or
+yarn test
+# or
+pnpm test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Deployment
 
-## Deploy on Vercel
+To generate a production-optimized build:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
